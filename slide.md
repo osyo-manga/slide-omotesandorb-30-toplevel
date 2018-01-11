@@ -309,8 +309,55 @@ p X.new.foo
 
 * トップレベルの self は main という特別なオブジェクト     <!-- .element: class="fragment" -->
 * トップレベルで定義したメソッドは Object の private インスタンスメソッドとして定義される     <!-- .element: class="fragment" -->
-  * なのでトップレベルで定義したメソッドはどこからでも参照される
 * トップレベルの定数も Object の定数として定義されるが探査方法が特殊なので注意     <!-- .element: class="fragment" -->
+* トップレベルで定義したメソッドや定数はどこからでも参照されるので定義する場合は影響が大きいことに注意する    <!-- .element: class="fragment" -->
+
+>>>
+
+```ruby
+# トップレベルで定義したメソッドや定数は
+def hoge
+	
+end
+Hoge = 42
+
+# 以下のように Object で定義されるのと等価
+class Object
+	private def hoge
+		
+	end
+
+	Hoge = 42
+end
+```
+
+---
+
+#### おまけ：安全にトップレベルでメソッドを定義する
+- - -
+
+```ruby
+# A.rb
+
+# refinements を使い、その中で Object に対してメソッドをテイギスル
+using Module.new {
+	refine Object do
+		def foo
+			:foo
+		end
+	end
+}
+
+p foo # => :foo
+```
+
+```ruby
+# B.rb
+require_relative "./A.rb"
+
+# Error: undefined local variable or method `foo' for main:Object (NameError)
+p foo
+```
 
 ---
 
