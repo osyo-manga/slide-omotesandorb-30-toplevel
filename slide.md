@@ -13,6 +13,7 @@
 * ブログ  : [Secret Garden(Instrumental)](http://secret-garden.hatenablog.com)
 * 言語    : C++ / Ruby
 * エディタ: Vim
+* Ruby 2.5 で Method#=== が取り込まれた！！！
 * Rails はできません
  
 ---
@@ -37,7 +38,7 @@
 * [Ruby Advent Calendar 2017](https://qiita.com/advent-calendar/2017/ruby)
   * [Ruby で型チェックを実装してみよう](http://secret-garden.hatenablog.com/entry/2017/12/01/000154)
 * [一人 Ruby Advent Calendar 2017](https://qiita.com/advent-calendar/2017/ruby_pink_bangbi)
-  * Ruby に関する小ネタみたいなのを書いてます
+  * Suby に関する小ネタみたいなのを書いてます
 * [一人 vimrc Advent Calendar 2017](https://qiita.com/advent-calendar/2017/vimrc_pink_bangbi)
   * vimrc に関する小ネタみたいなのを書いてます
 
